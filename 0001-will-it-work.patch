@@ -1,0 +1,63 @@
+From 27b13c1db438affa9c940273506feb99e0fffb60 Mon Sep 17 00:00:00 2001
+From: Hyat Shimo <shimo.metropolia@gmail.com>
+Date: Sat, 14 Dec 2024 19:09:03 +0200
+Subject: [PATCH] will it work
+
+---
+ basics/mergesort.py | 10 ----------
+ 1 file changed, 10 deletions(-)
+
+diff --git a/basics/mergesort.py b/basics/mergesort.py
+index 119844c..bf53370 100644
+--- a/basics/mergesort.py
++++ b/basics/mergesort.py
+@@ -9,12 +9,10 @@ def debug_print(debug_msg=None, **kwargs):
+ 
+ 
+ def mergesort(array):
+-    debug_print(array=array)
+     if len(array) <= 1:
+         return array
+ 
+     m = len(array) // 2
+-    debug_print(m=m)
+ 
+     left = mergesort(array[:m])
+     right = mergesort(array[m:])
+@@ -23,8 +21,6 @@ def mergesort(array):
+ 
+ 
+ def merge(left, right):
+-    debug_print(debug_msg="Merging...", left=left, right=right)
+-
+     merged = []
+ 
+     while len(left) > 0 and len(right) > 0:
+@@ -38,16 +34,12 @@ def merge(left, right):
+     else:
+         merged += right
+ 
+-    debug_print(merged=merged)
+     return merged
+ 
+ 
+ if __name__ == "__main__":
+     input_str = input("Enter numbers, separated by ',': ")
+-
+     input_list = input_str.split(",")
+-    debug_print(input_list=input_list)
+-
+     value_list = []
+     for x in input_list:
+         try:
+@@ -56,7 +48,5 @@ if __name__ == "__main__":
+             print("Invalid input.")
+             quit(1)
+ 
+-    debug_print(value_list=value_list)
+-
+     sorted_list = mergesort(value_list)
+     print(sorted_list)
+-- 
+2.47.1.windows.1
+
